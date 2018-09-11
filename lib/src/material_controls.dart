@@ -84,18 +84,26 @@ class _MaterialControlsState extends State<MaterialControls> {
     VideoPlayerController controller,
   ) {
     final iconColor = Theme.of(context).textTheme.button.color;
+//    final iconColor = Colors.grey;
 
     return new AnimatedOpacity(
       opacity: _hideStuff ? 0.0 : 1.0,
       duration: new Duration(milliseconds: 300),
       child: new Container(
         height: barHeight,
-        color: Theme.of(context).dialogBackgroundColor,
+        color:Colors.white30,
+//        color: Theme.of(context).dialogBackgroundColor,
         child: new Row(
           children: <Widget>[
             _buildPlayPause(controller),
-            _buildPosition(iconColor),
-            _buildProgressBar(),
+            new Padding(
+              padding: new EdgeInsets.only(right: 24.0),
+            ),
+            new Expanded(
+              child: new Padding(
+                padding: new EdgeInsets.only(right: 20.0),
+              ),
+            ),
             _buildMuteButton(controller),
             _buildExpandButton(),
           ],
@@ -151,7 +159,8 @@ class _MaterialControlsState extends State<MaterialControls> {
               child: new GestureDetector(
                 child: new Container(
                   decoration: new BoxDecoration(
-                    color: Theme.of(context).dialogBackgroundColor,
+//                    color: Theme.of(context).dialogBackgroundColor,
+                    color: Colors.white30,
                     borderRadius: new BorderRadius.circular(48.0),
                   ),
                   child: new Padding(
